@@ -1,0 +1,23 @@
+{
+  "name": "lostgrid-cssnano-issue",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build:postcss && npm run build:cssnano-cli && npm run build:cssnano-js && npm run build:cssnano-js-no-calc",
+    "build:postcss": "postcss --use lost -o output.postcss.css input.css",
+    "build:cssnano-cli": "cssnano output.postcss.css output.cssnano-cli.css --safe",
+    "build:cssnano-js": "node cssnano.js output.postcss.css output.cssnano-js.css",
+    "build:cssnano-js-no-calc": "node cssnano.js output.postcss.css output.cssnano-js-no-calc.css nocalc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cssnano": "^3.10.0",
+    "cssnano-cli": "^1.0.5",
+    "lost": "^8.0.0",
+    "postcss": "^5.2.16",
+    "postcss-cli": "^3.1.1"
+  }
+}
